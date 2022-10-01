@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body onload="greeting()">
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="header" id="time"> </div>
+    <div class="pic"><img id="pic" src="cubetexture.jpg"></div>
+  </main>
+    <div id="app"></div>
+  <script>
+function greeting() {
+const date = new Date();
+let hr = date.getHours();
+console.log(hr);
+
+if (hr <= 4 || hr >= 18) { //
+    document.getElementById("time").innerHTML = "Good evening! I'm Nisa Albino!";
+    console.log(hr);
+}
+else if (hr >= 5 || hr <= 11) {
+    document.getElementById("time").innerHTML = "Good morning! I'm Nisa Albino!";
+}
+else if (hr >= 12 || hr <= 17) {
+    document.getElementById("time").innerHTML = "Good afternoon! I'm Nisa Albino!";
+
+}
+}
+</script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
