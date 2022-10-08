@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- SKILLS: <li>Java</li><li>Javascript</li><li>HTML</li><li>CSS</li><li>Git and GitHub</li><li>Tutoring</li>-->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Nisa Albino</title>
   </head>
   <body onload="greeting()">
   <canvas id="bg"></canvas>
   <main>
-    <div class="header" id="time"> </div>
-    <div class="pic"><img id="pic" src="cubetexture.jpg"></div>
+    <div class="wrapper">
+    <!--heading with greeting and headshot + caption-->
+    <div class="header">
+    <div class="greeting fade-in" id="time"> </div>
+    <div class="pic fade-in"><img id="pic" src="cubetexture.jpg">
+      <p class="title fade-in">Aspiring Computer Programmer</p>
+    </div>
+    </div>
+
+  <!--showcase-->
+    <div class="abtMe">
+      <p class="subject fade-in">About Me</p>
+      <p class="fade-in">Every since I was young, I have always had a strong passion for solving problems. </p>
+      <p class="fade-in">I fell in love with coding the day I was introduced the Hour of Code in middle school. My life was changed.</p>
+      <p class="fade-in">In high school, I gained the courage to join the Girl Who Code club to learn more about computer science </p>
+      <p class="fade-in">I grew within this community as we learned how to build websites and games. <br> <br> Today I am the president of my school's Girls Who Code</p>
+      <img>
+    </div>
+
+
+
+
+
+    <!--3 col chart for bottom (right before conclusion)-->
+    <p> Due to my love of pro, a majority of my computer science knowledge is self-taught. </p>
+    <div class="chart">
+      <div class="skills"><p>Skills</p>
+        <ul>
+          <li>Java</li><li>Javascript</li><li>HTML</li><li>CSS</li><li>Git and GitHub</li><li>Tutoring</li>
+        </ul></div>
+      <div class="interest"><p>Interests</p>
+        <ul>
+          <li>AI development</li>
+          <li>Robotics</li>
+          <li>Engineering</li>
+          <li>Game Dev</li>
+        </ul></div>
+      <div class="hobby"><p>Hobbies</p>
+        <ul>
+          <li>Web Development</li>
+          <li>Programming small AI projects</li>
+          <li>Ardiuno</li>
+          <li>Baking</li>
+          <li>Playing Piano</li>
+        </ul></div>
+      </div>
+
+
+      <!--conclusion-->
+      <p>I plan in my university to develop these computer science skills to later establish my dream of creating an impact on the world.</p>
+    </div>
   </main>
     <div id="app"></div>
   <script>
@@ -33,5 +83,6 @@ else if (hr >= 12 || hr <= 17) {
 }
 </script>
     <script type="module" src="/main.js"></script>
+  <script type="module" src="/scroll.js"></script>
   </body>
 </html>
