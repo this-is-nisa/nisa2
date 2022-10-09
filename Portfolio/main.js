@@ -79,7 +79,7 @@ const geometry = new THREE.SphereGeometry(0.25, 24, 24);
 const material = new THREE.MeshBasicMaterial({ color: 0xFAF5BE });
 const star = new THREE.Mesh(geometry, material);
 
-const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(200, 500));
+const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(250, 500));
 star.position.set(x, y, z);
 star.layers.set(1);
 scene.add(star);
