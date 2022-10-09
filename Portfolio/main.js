@@ -1,26 +1,44 @@
 import './style.css'
 import * as THREE from 'three';
-import{OrbitControls} from 'three/examples/jsm/controls/OrbitControls';  // mouse controls
-
-
-//time
-
+import{ OrbitControls } from 'three/examples/jsm/controls/OrbitControls';  // mouse controls
+import { EffectComposer } from "/node_modules/three/examples/jsm/postprocessing/EffectComposer.js";
+import { UnrealBloomPass } from "/node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { RenderPass } from "/node_modules/three/examples/jsm/postprocessing/RenderPass.js";
 // 3D
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer();
+
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild(renderer.domElement );
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+/* bloom
+const renderBloom = new RenderPass(scene, camera);
+const bloomPass = new UnrealBloomPass(
+new THREE.Vector2(window.innerWidth, window.innerHeight),
+1.5,
+0.4,
+0.85
+);
+bloomPass.threshold = 0;
+bloomPass.strength = 100;
+bloomPass.radius = 0;
+const bloomComposer = new EffectComposer(renderer);
+bloomComposer.setSize(window.innerWidth, window.innerHeight);
+bloomComposer.renderToScreen = true;
+bloomComposer.addPass(renderBloom);
+bloomComposer.addPass(bloomPass);
+*/
 // lights
 const ptLight = new THREE.PointLight(0xffffff, 1, 100);
 ptLight.castShadow = true;
 ptLight.position.set(20, 10, 40);
-const ambLight = new THREE.AmbientLight(0x404040);
+const ambLight = new THREE.AmbientLight(0xffffff, 0.1);
 scene.add(ptLight, ambLight);
 
 /*shadows
@@ -41,7 +59,7 @@ scene.add(helper);*/
 // textures
 const cubeTexture = new THREE.TextureLoader().load('cubetexture.jpg');
 
-/* obj
+ /*obj
 const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
 const cubeMaterial = new THREE.MeshStandardMaterial({ map:cubeTexture });
 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
@@ -56,16 +74,41 @@ cube.position.y = -1;
 camera.position.z = 2.5; // take out of middle
 */
 
+function starGen(){
+const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+const material = new THREE.MeshBasicMaterial({ color: 0xFAF5BE });
+const star = new THREE.Mesh(geometry, material);
+
+const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(200, 500));
+star.position.set(x, y, z);
+star.layers.set(1);
+scene.add(star);
+}
+
+Array(500).fill().forEach(starGen);
+
 //bg
 const background = new THREE.TextureLoader().load('gradient.jpg');
 scene.background = background;
+
+
+// camera for scroll
+function moveCamera(){
+const t = document.body.getBoundingClientRect().top;
+
+camera.position.z = t * -0.01;
+camera.position.y = t * -0.0002;
+camera.position.x = t * -0.0002;
+}
+document.body.onscroll = moveCamera;
 
 
 function animate() {
     requestAnimationFrame(animate);
    // cube.rotation.y += 0.01;
     //controls.update();
-
+   camera.layers.set(1);
+   // bloomComposer.render();
     renderer.render(scene, camera);
 }
 
