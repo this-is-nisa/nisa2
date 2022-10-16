@@ -1,9 +1,9 @@
 import './style.css'
 import * as THREE from 'three';
 import{ OrbitControls } from 'three/examples/jsm/controls/OrbitControls';  // mouse controls
-import { EffectComposer } from "/node_modules/three/examples/jsm/postprocessing/EffectComposer.js";
-import { UnrealBloomPass } from "/node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js";
-import { RenderPass } from "/node_modules/three/examples/jsm/postprocessing/RenderPass.js";
+//import { EffectComposer } from "/node_modules/three/examples/jsm/postprocessing/EffectComposer.js";
+//import { UnrealBloomPass } from "/node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js";
+//import { RenderPass } from "/node_modules/three/examples/jsm/postprocessing/RenderPass.js";
 // 3D
 const scene = new THREE.Scene();
 
@@ -75,7 +75,7 @@ camera.position.z = 2.5; // take out of middle
 */
 
 function starGen(){
-const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+const geometry = new THREE.SphereGeometry(0.25, 15, 15);
 const material = new THREE.MeshBasicMaterial({ color: 0xFAF5BE });
 const star = new THREE.Mesh(geometry, material);
 
@@ -85,7 +85,7 @@ star.layers.set(1);
 scene.add(star);
 }
 
-Array(500).fill().forEach(starGen);
+Array(700).fill().forEach(starGen);
 
 //bg
 const background = new THREE.TextureLoader().load('gradient.jpg');

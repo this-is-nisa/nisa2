@@ -18,3 +18,19 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
 })
+
+
+
+//fix later -- divider animation
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+const square = entry.target.querySelector('.divider');
+  if (entry.isIntersecting) {
+  divider.classList.add('wipe-animation');
+  return;
+  }
+  divider.classList.remove('wipe-animation');
+   });
+});
+
+
