@@ -57,7 +57,7 @@ const helper = new THREE.CameraHelper(light.shadow.camera);
 scene.add(helper);*/
 
 // textures
-const cubeTexture = new THREE.TextureLoader().load('cubetexture.jpg');
+const cubeTexture = new THREE.TextureLoader().load('imgs/walter.jpg');
 
  /*obj
 const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -88,9 +88,9 @@ scene.add(star);
 Array(700).fill().forEach(starGen);
 
 //bg
-const background = new THREE.TextureLoader().load('gradient.jpg');
-scene.background = background;
-
+const backgroundPic = new THREE.TextureLoader().load('imgs/gradient.jpg'); // pic bg
+scene.background = backgroundPic;
+//scene.background = new THREE.Color(0x040E14); // solid color
 
 // camera for scroll
 function moveCamera(){
