@@ -57,7 +57,7 @@ const helper = new THREE.CameraHelper(light.shadow.camera);
 scene.add(helper);*/
 
 // textures
-const cubeTexture = new THREE.TextureLoader().load('imgs/walter.jpg');
+const cubeTexture = new THREE.TextureLoader().load('https://repo.github.io/Portfolio/imgs/walter.jpg');
 
  /*obj
 const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
