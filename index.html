@@ -1,6 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="refresh" content="0; url=https://this-is-nisa.github.io/Portfolio/index.html">
-</head>
+  <head>
+    <!-- SKILLS: <li>Java</li><li>Javascript</li><li>HTML</li><li>CSS</li><li>Git and GitHub</li><li>Tutoring</li>-->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nisa Albino</title>
+  </head>
+  <body onload="greeting()">
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="wrapper">
+    <!--heading with greeting and headshot + caption-->
+    <div class="header">
+    <div class="greeting fade-in" id="time"> </div>
+    <div class="pic fade-in"><img id="pic" src='https://repo.github.io/imgs/walter.jpg'>
+      <p class="title fade-in">Aspiring Computer Programmer</p>
+    </div>
+    </div>
+
+  <!--showcase-->
+    <div class="vertical-scroll">
+      <p class="subject fade-in">About Me</p>
+      <p class="fade-in"> Since an early age, I have always loved to solve problems. </p>
+      <p class="fade-in">In middle school, I was introduced to Code.org where I was fascinated by the ability to make objects move and come to life with my command </p>
+      <p class="fade-in">From that moment I knew exactly where I wanted to direct my life towards: computer science.</p>
+<br>  <hr class="divider fade-in"> <br>
+      <p class="fade-in">I joined the <mark>Girls Who Code</mark> club in my high school</p>
+      <p class="fade-in">Within these few years, I learned to code, build websites, and make games. Today I am the president of my school's Girls Who Code</p>
+      <img>
+    </div>
+      <div class="pics">
+        <img class="GWCpic fade-in" src="https://repo.github.io/Portfolio/imgs/GWCPic.jpg">
+        <img class="GWCpic fade-in" src="https://repo.github.io/Portfolio/imgs/OpenHousePoster.jpg">
+        <img class="GWCpic fade-in" src="https://repo.github.io/Portfolio/imgs/SendaSnack.jpg">
+      </div>
+
+      <div class="vertical-scroll">
+        <br><br>
+        <p class="fade-in">I organize club events and create/lead coding activites!</p> <!--maybe insert pic of meowbit-->
+      </div>
+      <div class="perfClub fade-in">
+        <p class="p1">We are currently programming a survey called <mark>"Perfect Club 4 U"</mark> </p>
+        <p class="description"> A Google Form edited with Appscript to create a quiz that tells the user what club at our school is best fit for them based on their answers.</p>
+      <img class="code-gif fade-in" src="https://repo.github.io/Portfolio/imgs/PerfClub4Ucode.gif">
+      </div>
+
+      <div class="vertical-scroll">
+        <br><br><hr class="divider fade-in"> <br>
+        <p class="fade-in">Most of my coding knowledge is self-taught through Codecademy.com and <mark>personal projects</mark>.</p>
+      </div>
+
+      <div class="sattimer fade-in">
+          <p class="stsubj">SAT Timer</p>
+         <p class="stintro">A proctor in the SAT alerts you when you have half the time remaining and when you have five minutes left.
+          I couldn't find any timer that had this function, so I decided to make my own.</p>
+        <p class="stdescrip"> This is a Javascript timer tool that functions as a normal timer, but has an announcement when you have half-time or 5 minutes remaining.
+          I made it to mimic the alerts you get from the proctor when taking the real SAT. You can choose which functions you would like and includes preset times for each test.
+         <i> There are still a few minor bugs, but I will get them fixed soon. I have used it for my own practice tests,
+          and I hope it can be useful for SAT studiers in the future.</i></p>
+        <img class="timer-gif" src="imgs/timer2.gif">
+        <a class="git" href="https://github.com/this-is-nisa/SAT-Timer" target="_blank"><span>Github Repo</span><i></i></a>
+        <a class="stlink" href="https://this-is-nisa.github.io/SAT-Timer/" target="_blank"><span>Try it out!</span><i></i></a>
+
+      </img>
+  </div>
+
+      <div class="aiProj fade-in">
+        <p class="aisubj">AI Projects</p>
+        <div class="aitext">
+        <p class="aiintro">Through participating the MLH summer workshops, I was able to build my first AI</p>
+        <p class="aidescrip">In the workshop, I built a small AI program that predicts the number of stars a customer gave an Amazon product based on their written review. </p>
+        </div>
+          <div class="learn">
+          <p class="ailearn">What I learned:</p>
+          <ul>
+            <li>Sentiment Analysis</li>
+            <li>Data Analyzation</li>
+            <li>Characters, Tokens, Docs, and Corpuses</li>
+            <li>Lemmatization and Lambda </li>
+            <li>Python Basics</li>
+            <li>Libraries and APIs</li>
+            </ul>
+          </div>
+
+        <a class="ailink" target="_blank" href="https://colab.research.google.com/drive/1AljStNp4eXeKB2kbXq9s0HuMVNeeqCbd#scrollTo=D113luWHnvyh"> <span>Try it out! (Google Colab)</span><i></i></a>
+      </div>
+
+      <div class="vertical-scroll"><p class="fade-in comingsoon"><i>✨MORE COMING SOON✨</i></p></div>
+      <br><br>
+
+
+    <!--3 col chart for bottom (right before conclusion)
+    <p> Due to my love of pro, a majority of my computer science knowledge is self-taught. </p>
+    <div class="chart">
+      <div class="skills"><p>Skills</p>
+        <ul>
+          <li>Java</li><li>Javascript</li><li>HTML</li><li>CSS</li> <li>very little Python</li><li>Git and GitHub</li><li>Tutoring</li>
+        </ul></div>
+      <div class="interest"><p>Interests</p>
+        <ul>
+          <li>AI development</li>
+          <li>Robotics</li>
+          <li>Engineering</li>
+          <li>Game Dev</li>
+        </ul></div>
+      <div class="hobby"><p>Hobbies</p>
+        <ul>
+          <li>Web Development</li>
+          <li>Programming small AI projects</li>
+          <li>Ardiuno</li>
+          <li>Baking</li>
+          <li>Playing Piano</li>
+        </ul></div>
+      </div>
+
+
+
+      <p>I plan in my university to develop these computer science skills to later establish my dream of creating an impact on the world.</p> -->
+    </div>
+
+
+  </main>
+    <div id="app"></div>
+  <script>
+function greeting() {
+const date = new Date();
+let hr = date.getHours();
+console.log(hr);
+
+if (hr <= 4 || hr >= 18) { //
+    document.getElementById("time").innerHTML = "Good evening! I'm Nisa Albino!";
+    console.log(hr);
+}
+else if (hr >= 5 || hr <= 11) {
+    document.getElementById("time").innerHTML = "Good morning! I'm Nisa Albino!";
+}
+else if (hr >= 12 || hr <= 17) {
+    document.getElementById("time").innerHTML = "Good afternoon! I'm Nisa Albino!";
+
+}
+}
+</script>
+    <script type="module" src="/main.js"></script>
+  <script type="module" src="/scroll.js"></script>
+  </body>
 </html>
